@@ -9,10 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@repo/database": "*",
     "next": "14.2.14",
+    "next-auth": "^4.24.8",
     "react": "^18",
-    "react-dom": "^18",
-    "@repo/database": "*"
+    "react-dom": "^18"
   },
   "devDependencies": {
     "@types/node": "^20",
