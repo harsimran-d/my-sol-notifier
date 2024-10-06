@@ -1,0 +1,18 @@
+{
+  "name": "@sol-notifier/database",
+  "type": "module",
+  "version": "0.0.0",
+  "scripts": {
+    "db:migrate:dev": "prisma migrate dev",
+    "db:generate": "prisma generate"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.20.0"
+  },
+  "devDependencies": {
+    "prisma": "^5.20.0"
+  },
+  "exports": {
+    ".": "./index.ts"
+  }
+}
