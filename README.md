@@ -28,3 +28,20 @@ A simple UI where a user can
 1. Add their `public key + blockchain` on the left
 2. Add notifiers on the right (connect a discord channel/slack/whatsapp/push notifications in the browser)
 3. A portfolio header that shows the user their net worth
+
+## Run Locally
+
+- `git clone https://github.com/code100x/sol-notifier.git`
+- `cd sol-notifier`
+- `npm install`
+
+Copy all `.env.example` files to respective `.env` files and add your own variables
+
+1. One for `next-auth` and `Google Provider`
+2. For `prisma database url`
+
+### Then
+
+- `npm run prisma:migrate:dev`
+- `npm run prisma:generate`
+- `npm run dev`
