@@ -14,18 +14,18 @@ export const authConfig: NextAuthOptions = {
   },
   callbacks: {
     async signIn({ account, profile }) {
-      if (!profile?.email || !account?.userId) {
+      if (!profile?.email || !account?.providerAccountId) {
         return false;
       }
       const user = await prisma.user.upsert({
         where: {
           email: profile.email,
-          googleId: account.userId,
+          googleId: account.providerAccountId,
         },
         create: {
           email: profile.email,
           name: profile.name,
-          googleId: account.userId,
+          googleId: account.providerAccountId,
         },
         update: {
           name: profile.name,
