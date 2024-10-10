@@ -1,3 +1,11 @@
+import LandingNavBar from "@/ui/LandingNavBar";
+import LandingPage from "@/ui/LandingPage";
+
 export default function Home() {
-  return <div className="">Sol Notifier</div>;
+  return (
+    <>
+      <LandingNavBar />
+      <LandingPage />
+    </>
+  );
 }
