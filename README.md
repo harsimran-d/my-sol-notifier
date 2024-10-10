@@ -37,6 +37,9 @@ A simple UI where a user can
 
 Copy all `.env.example` files to respective `.env` files and add your own variables
 
+- `cp apps/web/.env.example apps/web/.env`
+- `cp packages/database/.env.example packages/database/.env`
+
 1. One for `next-auth` and `Google Provider`
 2. For `prisma database url`
 
