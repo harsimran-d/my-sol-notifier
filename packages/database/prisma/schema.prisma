@@ -7,6 +7,10 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum BlockChain {
+  Solana
+}
+
 model User {
   id        String   @id @default(cuid())
   email     String   @unique
@@ -15,4 +19,18 @@ model User {
   googleId  String   @unique
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  pubKeys   PubKey[]
+}
+
+model PubKey {
+  id         String     @id @default(cuid())
+  address    String     @unique
+  blockchain BlockChain
+  user       User       @relation(fields: [userId], references: [id])
+  userId     String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
 }
