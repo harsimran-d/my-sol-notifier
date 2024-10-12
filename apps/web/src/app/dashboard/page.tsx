@@ -1,3 +1,11 @@
+import SolWalletButtons from "@/ui/components/SolWalletButtons";
+
 export default function Dashboard() {
-  return <p>Welcome to Sol Notifier, you are signed in.</p>;
+  return (
+    <div>
+      <div className="flex justify-end pr-2 pt-2">
+        <SolWalletButtons />
+      </div>
+    </div>
+  );
 }
