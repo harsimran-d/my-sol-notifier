@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client';
+import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library';
 
 const prismaClientSingleton = () => {
   return new PrismaClient();
@@ -10,6 +11,6 @@ declare const globalThis: {
 
 const prisma = globalThis.prismaGlobal ?? prismaClientSingleton();
 
-export { prisma };
+export { prisma, PrismaClientKnownRequestError };
 
 if (process.env.NODE_ENV !== 'production') globalThis.prismaGlobal = prisma;
