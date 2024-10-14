@@ -1,5 +1,6 @@
 import getAllPubKeys from "@/actions/getAllPubKeys";
 import DeletePubKey from "./DeletePubKey";
+import ViewTokens from "./ViewTokens";
 
 export default async function MyAddedKeys() {
   const resp = await getAllPubKeys();
@@ -21,8 +22,9 @@ export default async function MyAddedKeys() {
               <tr key={pubKey.id}>
                 <td>{pubKey.address}</td>
                 <td>{pubKey.blockchain}</td>
-                <td>
+                <td className="flex space-x-2">
                   <DeletePubKey id={pubKey.id} />
+                  <ViewTokens address={pubKey.address} />
                 </td>
               </tr>
             );
